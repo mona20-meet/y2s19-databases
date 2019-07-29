@@ -14,4 +14,17 @@ class Knowledge(Base):
 	# topic of the article. The last column will be
 	# an integer, representing your rating of the article.
 
-	pass
+	__tablename__= "paintings"
+	Name= Column(String, primary_key=True)
+	artist=Column(String)
+	year=Column(Integer)
+	value=Column(Integer)
+	def __repr__(self):
+		return ("Name: {}\n"
+				"Artist Name: {} \n"
+				"Year of Orgin: {} \n"
+				"Value: {}").format(
+					self.Name, self.artist, self.year, self.value)
+
+table1= Knowledge	(Name= 'Mona Lisa', artist= 'Leonardo da Vinci', year=1503, value=650000000)
+print(table1)
